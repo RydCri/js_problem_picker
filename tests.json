@@ -1,0 +1,12 @@
+[
+  {
+    "name": "addTwo",
+    "spec": "Write a function, addTwo, that takes in a number and returns the number plus 2.",
+    "tests": "describe(\"should work\", () => {\n  it(\"addTwo should be defined\", () => {\n    expect(typeof addTwo === \"function\").toBe(true);\n  });\n  it(\"should return 4 when passed 2\", () => {\n    expect(addTwo(2)).toBe(4);\n  });\n  it(\"should return 3 when passed 1\", () => {\n    expect(addTwo(1)).toBe(3);\n  });\n  it(\"should return 0 when passed -2\", () => {\n    expect(addTwo(-2)).toBe(0);\n  });\n  it(\"should return 2 when passed 0\", () => {\n    expect(addTwo(0)).toBe(2);\n  });\n});\n"
+  },
+  {
+    "name": "addThree",
+    "spec": "Write a function, addThree, that takes in a number and returns the number plus 3.",
+    "tests": "describe(\"should work\", () => {\n  it(\"addThree should be defined\", () => {\n    expect(typeof addThree === \"function\").toBe(true);\n  });\n  it(\"should return 5 when passed 2\", () => {\n    expect(addThree(2)).toBe(5);\n  });\n  it(\"should return 4 when passed 1\", () => {\n    expect(addThree(1)).toBe(4);\n  });\n  it(\"should return 1 when passed -2\", () => {\n    expect(addThree(-2)).toBe(1);\n  });\n  it(\"should return 3 when passed 0\", () => {\n    expect(addThree(0)).toBe(3);\n  });\n});\n"
+  }
+]
