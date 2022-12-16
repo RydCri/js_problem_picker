@@ -1,55 +1,46 @@
-describe('subtract', function () {
-
-    describe("Core Functionality", function () {
-
-        const firstInt = getRandomIntInclusive(30, 40)
-        const secondInt = getRandomIntInclusive(1, 20)
-
-        const thirdInt = getRandomIntInclusive(30, 40)
-        const forthInt = getRandomIntInclusive(1, 20)
-
-        it('should be a declared function', function () {
-            expect(subtract).toBeDefined();
+describe('square', function() {
+    describe('core functionality', function() {
+        it('should be a defined function', function() {
+            expect(typeof square).toBe('function');
         });
-        it(`should return ${firstInt - secondInt} when passed the arguments (${firstInt},${secondInt})`, function () {
-            expect(subtract(firstInt,secondInt)).toBe(firstInt - secondInt);
+        it('should return a number when passed a number', function() {
+            expect(typeof square(2)).toBe('number');
         });
-        it(`should return ${firstInt - forthInt} when passed the arguments ("${firstInt}",${forthInt})`, function () {
-            expect(subtract(firstInt.toString(),forthInt)).toBe(firstInt - forthInt);
+        it('should return 4 when passed 2', function() {
+            expect(square(2)).toBe(4);
         });
-        it(`should return ${-thirdInt - secondInt} when passed the arguments (${-thirdInt},"${secondInt}")`, function () {
-            expect(subtract((-thirdInt),secondInt.toString())).toBe(-thirdInt - secondInt);
+        it('should return .25 when passed .5', function() {
+            expect(square(.5)).toBe(.25);
         });
-
+        it('should return ' + (randomPositiveNumber * randomPositiveNumber) + ' when passed ' + randomPositiveNumber, function() {
+            expect(square(randomPositiveNumber)).toBe(randomPositiveNumber * randomPositiveNumber);
+        });
+        it('should return 1 when passed 1', function() {
+            expect(square(1)).toBe(1);
+        });
+        it('should return 1 when passed -1', function() {
+            expect(square(-1)).toBe(1);
+        });
+        it('should return 0 when passed 0', function() {
+            expect(square(0)).toBe(0);
+        });
+        it('should return false when passed null', function() {
+            expect(square(null)).toBe(false);
+        });
+        it('should return false when passed a non-numeric string', function() {
+            expect(square("Bob")).toBe(false);
+        });
+        it('should return false when passed a boolean', function() {
+            expect(square(true)).toBe(false);
+        });
+        it('should return false when passed an array', function() {
+            expect(square(exampleArray)).toBe(false);
+        });
+        it('should return false when passed an object', function() {
+            expect(square(exampleObject)).toBe(false);
+        });
+        it('should return false when called with no arguments', function() {
+            expect(square()).toBe(false);
+        });
     });
-
-    describe("Validation", function () {
-
-        it(`should return false when called without passing an argument`, function () {
-            expect(subtract()).toBeFalse()
-        });
-        it('should return false when a non numeric string is passed as an argument', function () {
-            expect(subtract(randomPositiveEvenNumber(),randomName)).toBeFalse()
-        });
-        it(`should return false when undefined is passed as an argument`, function () {
-            expect(subtract(randomPositiveNumber,undefined)).toBeFalse()
-        });
-        it(`should return false when null is passed as an argument`, function () {
-            expect(subtract(null,randomPositiveNumericString)).toBeFalse()
-        });
-        it(`should return false when the boolean true is passed as an argument`, function () {
-            expect(subtract(true,randomPositiveNumber)).toBeFalse()
-        });
-        it(`should return false when the boolean false is passed as an argument`, function () {
-            expect(subtract(randomPositiveNumber,false)).toBeFalse()
-        });
-        it(`should return false when an object is passed as an argument`, function () {
-            expect(subtract(exampleObject,randomPositiveNumericString)).toBeFalse()
-        });
-        it(`should return false when an array is passed as an argument`, function () {
-            expect(subtract(randomPositiveNumericString,exampleArray)).toBeFalse()
-        });
-
-    });
-
 });
